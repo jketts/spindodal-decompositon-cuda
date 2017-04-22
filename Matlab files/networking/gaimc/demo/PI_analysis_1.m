@@ -1,0 +1,80 @@
+[r_size,c_size]=size(PI_data);
+
+grid_area = max(PI_data);
+
+PI_mat_2009 = zeros(grid_area(2),grid_area(2));
+PI_mat_2010 = zeros(grid_area(2),grid_area(2));
+PI_mat_2011 = zeros(grid_area(2),grid_area(2));
+xy_PI_data_2009 = zeros(grid_area(2),2);
+xy_PI_data_2010 = zeros(grid_area(2),2);
+xy_PI_data_2011 = zeros(grid_area(2),2);
+PI_dept_labels = cell(grid_area(2),1);
+    
+grant_no = PI_data(1,1);
+count_back_to_row = 1;
+for row = 2:1:r_size
+    if PI_data(row,1) == grant_no
+        for count_back = row:-1:count_back_to_row
+            if (PI_data(row,6) == 2009)
+                if (((PI_data(row,4) < 3) || (PI_data(row,4) > 6)) && ...
+                        (PI_data(count_back,4) < 3) || (PI_data(count_back,4) > 6))
+                    PI_mat_2009(PI_data(row,2),PI_data(count_back,2)) = 1;
+                    PI_mat_2009(PI_data(count_back,2),PI_data(row,2)) = 1;
+                end
+            elseif (PI_data(row,6) == 2010)
+                if (((PI_data(row,4) < 3) || (PI_data(row,4) > 6)) && ...
+                        (PI_data(count_back,4) < 3) || (PI_data(count_back,4) > 6))
+                    PI_mat_2010(PI_data(row,2),PI_data(count_back,2)) = 1;
+                    PI_mat_2010(PI_data(count_back,2),PI_data(row,2)) = 1;
+                end
+            else
+                if (((PI_data(row,4) < 3) || (PI_data(row,4) > 6)) && ...
+                        (PI_data(count_back,4) < 3) || (PI_data(count_back,4) > 6))
+                    PI_mat_2011(PI_data(row,2),PI_data(count_back,2)) = 1;
+                    PI_mat_2011(PI_data(count_back,2),PI_data(row,2)) = 1;
+                end
+            end
+            
+        end
+    else
+        grant_no = PI_data(row,1);
+        count_back_to_row = row;
+    end
+end
+PI_mat_sparse_2009 = sparse(PI_mat_2009);
+PI_mat_sparse_2010 = sparse(PI_mat_2010);
+PI_mat_sparse_2011 = sparse(PI_mat_2011);
+
+for row = 1:1:r_size
+    if (PI_data(row,6) == 2009)
+        if PI_data(row,4) > 6
+            xy_PI_data_2009(PI_data(row,2),1)=PI_data(row,5);
+            xy_PI_data_2009(PI_data(row,2),2)=PI_data(row,4)-5;
+        elseif PI_data(row,4) < 3
+            xy_PI_data_2009(PI_data(row,2),1)=PI_data(row,5);
+            xy_PI_data_2009(PI_data(row,2),2)=PI_data(row,4)-1;
+        end
+    elseif (PI_data(row,6) == 2010)
+        if PI_data(row,4) > 6
+            xy_PI_data_2010(PI_data(row,2),1)=PI_data(row,5);
+            xy_PI_data_2010(PI_data(row,2),2)=PI_data(row,4)-5;
+        elseif PI_data(row,4) < 3
+            xy_PI_data_2010(PI_data(row,2),1)=PI_data(row,5);
+            xy_PI_data_2010(PI_data(row,2),2)=PI_data(row,4)-1;
+        end
+    else
+        if PI_data(row,4) > 6
+            xy_PI_data_2011(PI_data(row,2),1)=PI_data(row,5);
+            xy_PI_data_2011(PI_data(row,2),2)=PI_data(row,4)-5;
+        elseif PI_data(row,4) < 3
+            xy_PI_data_2011(PI_data(row,2),1)=PI_data(row,5);
+            xy_PI_data_2011(PI_data(row,2),2)=PI_data(row,4)-1;
+        end
+    end
+    PI_dept_labels(PI_data(row,2))=dept_labels(PI_data(row,3));
+end
+    
+
+        
+        
+        

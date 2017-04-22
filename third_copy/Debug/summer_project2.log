@@ -1,0 +1,82 @@
+﻿Build started 20/08/2012 12:01:20.
+     1>Project "E:\third copy\summer_project2.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\summer_project2.lastbuildstate".
+       CudaClean:
+         cmd.exe /C "D:\Users\Nigel\AppData\Local\Temp\2746998aeaeb49668662e91daa167d0b.cmd"
+         "D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\bin\nvcc.exe" -ccbin "d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin"  -I"D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\include"  -G0  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi  /MDd " -o "Debug\kernel.cu.obj" "E:\third copy\kernel.cu" -clean
+         
+         E:\third copy>"D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\bin\nvcc.exe" -ccbin "d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin"  -I"D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\include"  -G0  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi  /MDd " -o "Debug\kernel.cu.obj" "E:\third copy\kernel.cu" -clean 
+         Deleting file "Debug\kernel.cu.deps".
+       InitializeBuildStatus:
+         Creating "Debug\summer_project2.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       AddCudaCompileDeps:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /I"D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\bin" /I"D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\include" /I. /FIcuda_runtime.h /c "E:\third copy\kernel.cu" 
+       AddCudaCompilePropsDeps:
+         Found "CudaToolkitCustomDir".
+         Found "AdditionalDeps".
+         Found "CompileOut".
+         Found "Include".
+         Found "Keep".
+         Found "KeepDir".
+         Found "NvccCompilation".
+         Found "NvccPath".
+         Found "RequiredIncludes".
+         Found "TargetMachinePlatform".
+         Found "CInterleavedPTX".
+         Found "CodeGeneration".
+         Found "GPUDebugInfo".
+         Found "MaxRegCount".
+         Found "PtxAsOptionV".
+         Found "Defines".
+         Found "Emulation".
+         Found "HostDebugInfo".
+         Found "FastMath".
+         Found "Optimization".
+         Found "Runtime".
+         Found "RuntimeChecks".
+         Found "TypeInfo".
+         Found "Warning".
+         Found "AdditionalOptions".
+         Found "CommandLineTemplate".
+       CudaBuild:
+         Compiling CUDA source file kernel.cu...
+         cmd.exe /C "D:\Users\Nigel\AppData\Local\Temp\a568fe1aa69e40a79646c10889b7a6ad.cmd"
+         "D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin"  -I"D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\include"  -G0  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi  /MDd " -o "Debug\kernel.cu.obj" "E:\third copy\kernel.cu"
+         
+         E:\third copy>"D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin"  -I"D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\include"  -G0  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi  /MDd " -o "Debug\kernel.cu.obj" "E:\third copy\kernel.cu" 
+         kernel.cu
+         tmpxft_00000eb0_00000000-0_kernel.cudafe1.gpu
+         tmpxft_00000eb0_00000000-5_kernel.cudafe2.gpu
+         kernel.cu
+         tmpxft_00000eb0_00000000-0_kernel.cudafe1.cpp
+         tmpxft_00000eb0_00000000-11_kernel.ii
+       ManifestResourceCompile:
+         D:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\summer_project2.exe.embed.manifest.res" Debug\summer_project2_manifest.rc 
+       Link:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\third copy\Debug\summer_project2.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\lib\Win32" cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\summer_project2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\third copy\Debug\summer_project2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\third copy\Debug\summer_project2.lib" /MACHINE:X86 Debug\kernel.cu.obj
+         Debug\summer_project2.exe.embed.manifest.res
+       Manifest:
+         Deleting file "Debug\summer_project2.exe.embed.manifest".
+         D:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\summer_project2.exe.embed.manifest" /manifest Debug\summer_project2.exe.intermediate.manifest
+         D:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\summer_project2.exe.embed.manifest.res" Debug\summer_project2_manifest.rc 
+       LinkEmbedManifest:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\third copy\Debug\summer_project2.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\lib\Win32" cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\summer_project2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\third copy\Debug\summer_project2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\third copy\Debug\summer_project2.lib" /MACHINE:X86 Debug\kernel.cu.obj
+         Debug\summer_project2.exe.embed.manifest.res
+         summer_project2.vcxproj -> E:\third copy\Debug\summer_project2.exe
+       PostBuildEvent:
+         echo copy "D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\bin\cudart*.dll" "E:\third copy\Debug\"
+         copy "D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\bin\cudart*.dll" "E:\third copy\Debug\"
+         :VCEnd
+         copy "D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\bin\cudart*.dll" "E:\third copy\Debug\"
+         D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\bin\cudart32_41_28.dll
+         D:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.1\bin\cudart64_41_28.dll
+                 2 file(s) copied.
+       FinalizeBuildStatus:
+         Deleting file "Debug\summer_project2.unsuccessfulbuild".
+         Touching "Debug\summer_project2.lastbuildstate".
+     1>Done Building Project "E:\third copy\summer_project2.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:11.36
